@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/forms/form.css' %}"/>
+</head>
+<body>
+    <div style="margin: 15% 40%;">
+        <h1>注册</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                {{ register_form.username.label_tag }}
+                {{ register_form.username }}
+            </p>
+            <p>
+                {{ register_form.true_name.label_tag }}
+                {{ register_form.true_name }}
+            </p>
+            <p>
+                {{ register_form.password.label_tag }}
+                {{ register_form.password }}
+            </p>
+            <p>
+                {{ register_form.password2.label_tag }}
+                {{ register_form.password2 }}
+            </p>
+            <p>
+                {{ register_form.email.label_tag }}
+                {{ register_form.email }}
+            </p>
+            <p>
+                {{ register_form.sex.label_tag }}
+                {{ register_form.sex }}
+            </p>
+            <p>
+                {{ register_form.captcha.errors }}
+                {{ register_form.captcha.label_tag }}
+                {{ register_form.captcha }}
+            </p>
+            <input type="submit" value="确定">
+        </form>
+        <a href="/login/">已有账号？马上登录</a>
+    </div>
+    {% if message %}
+        <script type="text/javascript">
+            alert("{{ message }}");
+        </script>
+    {% endif %}
+</body>
+</html>

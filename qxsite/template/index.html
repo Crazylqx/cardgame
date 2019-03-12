@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>李权熹的主页</title>
+</head>
+<body>
+    {% if name %}
+        <h1>欢迎你，{{ name }}</h1>
+        <a href="/logout/">退出登录</a>
+    {% else %}
+        <h1>欢迎来到李权熹的主页</h1>
+        <a href="/login/">登录</a>
+        <a href="/register/">注册</a>
+    {% endif %}
+</body>
+</html>

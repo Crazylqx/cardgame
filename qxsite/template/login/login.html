@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/forms/form.css' %}"/>
+</head>
+<body>
+    <div style="margin: 15% 40%;">
+        <h1>登录</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                {{ login_form.username.label_tag }}
+                {{ login_form.username}}
+            </p>
+            <p>
+                {{ login_form.password.label_tag }}
+                {{ login_form.password}}
+            </p>
+            <input type="submit" value="确定">
+        </form>
+        <a href="/register/">没有账号？注册一个</a>
+        <a href="/findpassword/">忘记密码？</a>
+    </div>
+    {% if message %}
+        <script type="text/javascript">
+            alert("{{ message }}");
+        </script>
+    {% endif %}
+</body>
+</html>

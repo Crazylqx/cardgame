@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>打扑克</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cardgame/play.css' %}"/>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <p id="messages"></p>
+    <table id="action-table">
+        <tr id="actions"></tr>
+    </table>
+    <div id="connecting">
+        <div id="connecting-back"></div>
+        <div id="connecting-front">网络连接中...</div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/cardgame/play.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cardgame/cards.js' %}"></script>
+    <script type="text/javascript">
+        initialize();
+        cardback = loadImage("{% static 'img/cardback.jpg' %}");
+        friendImg = loadImage("{% static 'img/friend.jpg' %}");
+    </script>
+    <script type="text/javascript" src="{% static 'js/cardgame/connect.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cardgame/play_network.js' %}"></script>
+    {% if extrascript %}
+    <script type="text/javascript" src="{% static extrascript %}"></script>
+    {% endif %}
+</body>
+</html>

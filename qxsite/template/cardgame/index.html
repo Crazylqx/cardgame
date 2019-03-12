@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% load static %}
+</head>
+<body style="overflow: hidden;">
+        <div style="margin: 15% 40%;">
+            <h1><span id="enter_tag">加入房间</span>/<span id="create_tag">创建房间</span></h1>
+            <p id = "p_type">
+                <label for="room_type">玩法</label>
+                <select id="room_type">
+                    <option value="default">普通</option>
+                    <option value="fucklandlord">斗地主</option>
+                </select>
+            </p>
+            <p>
+                <label for="room_id" max="16" autocomplete="off" parttern="[A-z0-9]+"
+                    title=“16个字符以下，只能含有数字或字母">房间名</label>
+                <input id="room_id">
+            </p>
+            <button id="submit"></button>
+        </div>
+        <div id="connecting">
+            <div style="
+                opacity: 0.5;
+                background-color: gray;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            "></div>
+            <div style="
+                opacity: 1;
+                background-color: yellow;
+                position: absolute;
+                top: 20%;
+                left: 40%;
+                width: 20%;
+                text-align: center;
+            ">网络连接中...</div>
+        </div>
+        <script type="text/javascript" src="{% static 'js/cardgame/connect.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/cardgame/rooms.js' %}"></script>
+</body>
+</html>
